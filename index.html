@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayush Gupta — Portfolio</title>
+  <meta name="description" content="Portfolio of Ayush Gupta (AG) — Data Analyst & Developer" />
+  <link rel="stylesheet" href = "style.css">
+
+</head>
+<body>
+  <div id="intro">
+    <div class="name-sequence">
+      <span class="line1">Presenting</span>
+      <span class="line2" id="bigName">Ayush Gupta</span>
+      <span class="line3">Portfolio</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="badge">AG</div>
+        <span>Ayush Gupta</span>
+      </div>
+      <div class="links">
+        <a href="#me">Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+<div class="hero-card">
+  <h1>Data Analyst & Web Developer</h1>
+  <p style="color: rgb(0, 100, 146);">
+    I am Ayush Gupta ,a Data Analyst with expertise in <strong>Excel, Power BI, Python, and SQL</strong>.  
+    I specialize in transforming raw data into actionable insights, creating interactive dashboards, and building data-driven solutions that support strategic decision-making.  
+    In addition, I leverage my web development skills to design and integrate intuitive applications for data visualization and reporting.
+  </p>
+</div>
+  </section>
+
+  <section class="row" id="me">
+    <h2>About Me</h2>
+    <div class="slider">
+      <article class="card">
+        <div>
+          <h3>Ayush Gupta</h3>
+          <div class="meta"><strong>From Varanasi | 7266907533 | 22f3000144@ds.study.iitm.ac.in</strong></div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>Education</h3>
+          <div class="meta"><strong>Diploma in Programming & Data Science, IIT Madras BS Degree</strong></div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>Certificates</h3>
+          <div class="meta"><strong>Python, SQL, Data Science</div>strong></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="row" id="skills">
+    <h2>Skills</h2>
+    <div class="slider">
+      <article class="card">
+        <div>
+          <h3>Technical Skills</h3>
+          <div class="meta">Python, SQL, Excel, ML, Flask, SQLAlchemy, Redis + Celery, Web Development</div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>Tools</h3>
+          <div class="meta">Power BI, Excel, Git</div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>Soft Skills</h3>
+          <div class="meta">Analytical Thinking, Unique Idea Developer</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+<section class="row" id="projects">
+  <h2>Projects</h2>
+  <div class="slider">
+
+    <article class="card">
+      <img src="img/bdm.jpg" alt="BDM Project">
+      <div>
+        <h3>BDM Project</h3>
+        <div class="meta">
+          <b>Collected live data from restaurant owners, analyzed and provided recommendations.</b>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/ml.jpg" alt="ML Prediction">
+      <div>
+        <h3>ML Prediction</h3>
+        <div class="meta">
+          <b>Predicted purchase value of customers using session data (Kaggle notebook).</b>        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/parking.jpg" alt="Vehicle Parking App">
+      <div>
+        <h3>Vehicle Parking App</h3>
+        <div class="meta">
+          <b>Web app with Flask + SQLAlchemy supporting user and admin features.</b>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+  <section class="row" id="contact">
+    <h2>Contact</h2>
+    <div class="slider">
+      <article class="card">
+        <div>
+          <h3>GitHub</h3>
+          <div class="meta"><a href="https://github.com/Ayus-gupta" target="_blank">github.com/Ayus-gupta</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>LinkedIn</h3>
+          <div class="meta"><a href="https://www.linkedin.com/in/ayush-gupta-9977b5287" target="_blank">Ayush Gupta</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div>
+          <h3>Portfolio Website</h3>
+          <div class="meta"><a href="https://sites.google.com/ds.study.iitm.ac.in" target="_blank">Google Site</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Ayush Gupta. All rights reserved.
+  </footer>
+
+  <script>
+    const intro = document.getElementById('intro');
+    const bigName = document.getElementById('bigName');
+    function playIntro(){
+      setTimeout(()=>{
+        bigName.textContent = 'AG';
+      }, 600);
+      setTimeout(()=>{
+        intro.classList.add('fade-out');
+      }, 1500);
+      setTimeout(()=> intro.remove(), 2400);
+    }
+    window.addEventListener('load', playIntro);
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+let index = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  index = (index + 1) % slide.length;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  index = (index - 1 + slide.length) % slide.length;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+});
+
+// Auto slide every 4 seconds
+setInterval(() => {
+  index = (index + 1) % slide.length;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}, 4000);
+  </script>
+</body>
+</html>
